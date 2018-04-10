@@ -105,10 +105,19 @@ public class MatchEntity {
         this.score = score;
     }
 
+    public GroupEntity getGroupEntity() {
+        return groupEntity;
+    }
+
+    public void setGroupEntity(GroupEntity groupEntity) {
+        this.groupEntity = groupEntity;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this).append("matchId", matchId).append("matchDay", matchDay)
                                         .append("homeTeam", homeTeam).append("awayTeam", awayTeam)
-                                        .append("kickoffAt", kickoffAt).append("score", score).toString();
+                                        .append("groupEntity", groupEntity).append("kickoffAt", kickoffAt)
+                                        .append("score", score).toString();
     }
 }
