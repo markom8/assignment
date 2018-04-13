@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -27,5 +28,15 @@ public class TeamFacadeImpl implements TeamFacade{
     @Override
     public TeamDTO saveTeam(TeamDTO teamDTO) {
         return teamMapper.mapToTeamDTO(teamService.saveTeam(teamMapper.mapToTeamEntity(teamDTO)));
+    }
+
+    @Override
+    public TeamDTO getTeamByName(String teamName) {
+        return teamMapper.mapToTeamDTO(teamService.findTeamByTeamName(teamName).get());
+    }
+
+    @Override
+    public List<TeamEntity> getAllTeams() {
+        return teamService.getAll();
     }
 }

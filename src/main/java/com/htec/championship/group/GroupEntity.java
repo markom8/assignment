@@ -7,6 +7,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "group")
+@Table(name = "championship_group")
 public class GroupEntity {
 
     @Id
@@ -26,19 +27,23 @@ public class GroupEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long groupId;
 
-    @Column(name = "group_name")
+    @Column(name = "group_name", unique = true)
     private String groupName;
 
-    @OneToMany(mappedBy = "groupEntity")
+    @OneToMany
     private Set<MatchEntity> matchEntitySet = new HashSet<>();
 
     @ManyToOne
-    @JoinColumn(name = "league_id", referencedColumnName = "league_id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "league_id", referencedColumnName = "league_id")
     private LeagueEntity leagueEntity;
 
     public GroupEntity(String groupName, Set<MatchEntity> matchEntitySet) {
         this.groupName = groupName;
         this.matchEntitySet = matchEntitySet;
+    }
+
+    public GroupEntity(String groupName) {
+        this.groupName = groupName;
     }
 
     public GroupEntity() {

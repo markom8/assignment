@@ -2,10 +2,13 @@ package com.htec.championship.match;
 
 import com.htec.championship.group.GroupEntity;
 import com.htec.championship.team.TeamEntity;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,27 +20,27 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "match")
+@Table(name = "championship_match")
 public class MatchEntity {
 
     @Id
-    @Column(name="match_id")
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "match_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long matchId;
 
     @Column(name = "match_day", nullable = false)
     private Integer matchDay;
 
     @ManyToOne
-    @JoinColumn(name = "home_team", referencedColumnName = "team_id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "home_team", referencedColumnName = "team_id")
     private TeamEntity homeTeam;
 
     @ManyToOne
-    @JoinColumn(name = "home_team", referencedColumnName = "team_id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "away_team", referencedColumnName = "team_id")
     private TeamEntity awayTeam;
 
     @ManyToOne
-    @JoinColumn(name = "group_id", referencedColumnName = "group_id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "group_id", referencedColumnName = "group_id")
     private GroupEntity groupEntity;
 
     @Column(name = "kickoff_at", nullable = false)
@@ -120,4 +123,5 @@ public class MatchEntity {
                                         .append("groupEntity", groupEntity).append("kickoffAt", kickoffAt)
                                         .append("score", score).toString();
     }
+
 }

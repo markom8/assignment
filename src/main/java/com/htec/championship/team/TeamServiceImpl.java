@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,8 +24,18 @@ public class TeamServiceImpl implements TeamService {
     }
 
     @Override
+    public Optional<TeamEntity> findTeamByTeamName(String teamName) {
+        return teamRepository.findByTeamName(teamName);
+    }
+
+    @Override
     public TeamEntity saveTeam(TeamEntity teamEntity) {
         return teamRepository.save(teamEntity);
+    }
+
+    @Override
+    public TeamEntity createTeam(String teamName) {
+        return saveTeam(new TeamEntity(teamName));
     }
 
     @Override
@@ -35,5 +46,10 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public void deleteTeam(TeamEntity teamEntity) {
         teamRepository.delete(teamEntity);
+    }
+
+    @Override
+    public List<TeamEntity> getAll() {
+        return teamRepository.findAll();
     }
 }
