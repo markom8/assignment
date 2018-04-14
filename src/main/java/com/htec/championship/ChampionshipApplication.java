@@ -17,13 +17,6 @@ public class ChampionshipApplication {
 		SpringApplication.run(ChampionshipApplication.class , args);
 	}
 
-
-//	public void addInterceptors(InterceptorRegistry registry)
-//	{
-//		registry.addInterceptor(new LoggingInterceptor()).addPathPatterns("/**");
-//	}
-
-
 	@Bean
 	public Docket docket()
 	{
