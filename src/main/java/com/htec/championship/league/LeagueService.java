@@ -9,6 +9,8 @@ public interface LeagueService {
 
     Optional<LeagueEntity> findLeagueById(Long leagueId);
 
+    Optional<String> findLeagueNameByLeagueid(Long leagueId);
+
     Optional<LeagueEntity> findLeagueByLeagueName(String leagueName);
 
     LeagueEntity createLeague(String leagueName);

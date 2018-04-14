@@ -18,4 +18,8 @@ public interface ResultsFacade {
     ResultRecord saveResultReturnGroupedTable(@Valid List<LeagueDTO> leagueDTOS);
 
     ResultRecord saveResultReturnGroupedTableSelectedGroup(@Valid List<LeagueDTO> leagueDTOS, Long grouopId);
+
+    ResultRecord returnGroupedTable();
+
+    ResultRecord returnGroupedTableSelectedGroup(String groupName);
 }

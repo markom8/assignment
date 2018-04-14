@@ -23,4 +23,6 @@ public interface TableService {
     List<TableEntity> getAllRanked();
 
     List<TableEntity> getAllForGroup(Long groupId);
+
+    List<TableEntity> getAllForGroupName(String groupName);
 }

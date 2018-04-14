@@ -20,5 +20,6 @@ public interface LeagueRepository extends JpaRepository<LeagueEntity, Long>, Que
     @Query("SELECT league.leagueId FROM LeagueEntity league WHERE league.leagueName = ?1")
     Long findLeagueIdByLeagueName(String leagueName);
 
-
+    @Query("SELECT league.leagueName FROM LeagueEntity league WHERE league.leagueId = ?1")
+    Optional<String> findLeagueNameByLeagueid(Long leagueId);
 }

@@ -4,6 +4,7 @@ import com.htec.championship.league.LeagueEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ public interface TableRepository extends JpaRepository<TableEntity, TablePK>, Qu
     @Query("SELECT t FROM TableEntity t order by t.points, t.goals, t.goalDifference desc ")
     List<TableEntity> findAllTablesRanked();
 
-    @Query("SELECT t from TableEntity  t where t.tablePK.groupId = groupId")
-    List<TableEntity> findAllByTablePKGroupId(Long groupId);
+    @Query("SELECT t from TableEntity  t where t.tablePK.groupId = :groupId")
+    List<TableEntity> findAllByTablePKGroupId(@Param("groupId") Long groupId);
+
 }

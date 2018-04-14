@@ -24,16 +24,20 @@ public interface MatchRepository extends JpaRepository<MatchEntity, Long> {
     @Query("SELECT match FROM MatchEntity match WHERE match.awayTeam.teamId = ?1 AND match.homeTeam.teamId = ?2 and (?3 is null OR match.groupEntity.groupId = ?3)")
     Optional<MatchEntity> findByAwayTeamIdAndHomeTeamIdAndGroupId(Long awayTeam, Long homeTeam, Long groupId);
 
-    Optional<MatchEntity> findByAwayTeamTeamNameAndHomeTeamTeamNameAndGroupEntityGroupName(String awayTeam, String homeTeam, String groupName);
+    @Query("   SELECT m "
+            + "FROM MatchEntity m "
+            + "WHERE m.awayTeam.teamName = :awayTeam "
+            + "AND m.homeTeam.teamName = :homeTeam "
+            + "AND m.groupEntity.groupName = :groupName")
+    Optional<MatchEntity> findByAwayTeamTeamNameAndHomeTeamTeamNameAndGroupEntityGroupName(@Param("awayTeam") String awayTeam, @Param("homeTeam") String homeTeam, @Param("groupName") String groupName);
 
     @Query(""
             + "SELECT m "
             + "FROM MatchEntity m "
-            + "WHERE (m.groupEntity.groupName = :gropName OR :groupName IS NULL)"
+            + "WHERE (m.groupEntity.groupName = :groupName OR :groupName IS NULL)"
             + "AND (m.awayTeam.teamName = :teamName OR m.homeTeam.teamName = :teamName OR :teamName IS NULL)"
             + "AND (m.kickoffAt > :dateFrom OR :dateFrom IS NULL)"
-            + "AND (m.kickoffAt < :dateTo OR :dateTO IS NULL)")
-
+            + "AND (m.kickoffAt < :dateTo OR :dateTo IS NULL)")
     List<MatchEntity> searchLeague( @Param("groupName") String groupName, @Param("teamName") String teamName, @Param("dateFrom") Date dateFrom, @Param("dateTo") Date dateTo);
 
 }

@@ -1,0 +1,50 @@
+[
+  {
+    "homeTeam": "Manchester United",
+    "awayTeam": "Basel",
+    "kickoffAt": "2017-09-12T20:45:00",
+    "score": "3:0",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Basel",
+    "awayTeam": "Benfica",
+    "kickoffAt": "2017-09-27T20:45:00",
+    "score": "5:0",
+    "group": "A",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "CSKA Moscow",
+    "awayTeam": "Basel",
+    "kickoffAt": "2017-10-19T20:45:00",
+    "score": "0:2",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Basel",
+    "awayTeam": "CSKA Moscow",
+    "kickoffAt": "2017-11-01T20:45:00",
+    "score": "1:2",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Basel",
+    "awayTeam": "Manchester United",
+    "kickoffAt": "2018-11-11T20:45:00",
+    "score": "1:0",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Benfica",
+    "awayTeam": "Basel",
+    "kickoffAt": "2017-12-07T20:45:00",
+    "score": "0:2",
+    "group": "A",
+    "matchday": 1
+  }
+]

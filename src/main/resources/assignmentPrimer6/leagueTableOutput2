@@ -1,0 +1,194 @@
+[
+  {
+    "homeTeam": "Benfica",
+    "awayTeam": "CSKA Moscow",
+    "kickoffAt": "2017-09-12T20:45:00",
+    "score": "1:2",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Manchester United",
+    "awayTeam": "Basel",
+    "kickoffAt": "2017-09-12T20:45:00",
+    "score": "3:0",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Basel",
+    "awayTeam": "Benfica",
+    "kickoffAt": "2017-09-27T20:45:00",
+    "score": "5:0",
+    "group": "A",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "CSKA Moscow",
+    "awayTeam": "Manchester United",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "1:4",
+    "group": "A",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "CSKA Moscow",
+    "awayTeam": "Basel",
+    "kickoffAt": "2017-10-19T20:45:00",
+    "score": "0:2",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Benfica",
+    "awayTeam": "Manchester United",
+    "kickoffAt": "2017-10-19T20:45:00",
+    "score": "0:1",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Basel",
+    "awayTeam": "CSKA Moscow",
+    "kickoffAt": "2017-11-01T20:45:00",
+    "score": "1:2",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Manchester United",
+    "awayTeam": "Benfica",
+    "kickoffAt": "2017-11-01T20:45:00",
+    "score": "2:0",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "CSKA Moscow",
+    "awayTeam": "Benfica",
+    "kickoffAt": "2018-11-11T20:45:00",
+    "score": "2:0",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Basel",
+    "awayTeam": "Manchester United",
+    "kickoffAt": "2018-11-11T20:45:00",
+    "score": "1:0",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Benfica",
+    "awayTeam": "Basel",
+    "kickoffAt": "2017-12-07T20:45:00",
+    "score": "0:2",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Manchester United",
+    "awayTeam": "CSKA Moscow",
+    "kickoffAt": "2017-12-07T20:45:00",
+    "score": "2:1",
+    "group": "A",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Bayern Munich",
+    "awayTeam": "Anderlecht",
+    "kickoffAt": "2017-09-12T20:45:00",
+    "score": "3:0",
+    "group": "B",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Celtic",
+    "awayTeam": "Paris Saint-Germain",
+    "kickoffAt": "2017-09-12T20:45:00",
+    "score": "0:5",
+    "group": "B",
+    "matchday": 1
+  },
+  {
+    "homeTeam": "Paris Saint-Germain",
+    "awayTeam": "Bayern Munich",
+    "kickoffAt": "2017-09-27T20:45:00",
+    "score": "3:0",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Anderlecht",
+    "awayTeam": "Celtic",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "0:3",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Anderlecht",
+    "awayTeam": "Paris Saint-Germain",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "0:4",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Bayern Munich",
+    "awayTeam": "Celtic",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "3:0",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Paris Saint-Germain",
+    "awayTeam": "Anderlecht",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "5:0",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Celtic",
+    "awayTeam": "Bayern Munich",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "1:2",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Anderlecht",
+    "awayTeam": "Bayern Munich",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "1:2",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Paris Saint-Germain",
+    "awayTeam": "Celtic",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "7:1",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Bayern Munich",
+    "awayTeam": "Paris Saint-Germain",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "3:1",
+    "group": "B",
+    "matchday": 2
+  },
+  {
+    "homeTeam": "Celtic",
+    "awayTeam": "Anderlecht",
+    "kickoffAt": "2017-09-28T20:45:00",
+    "score": "0:1",
+    "group": "B",
+    "matchday": 2
+  }
+]

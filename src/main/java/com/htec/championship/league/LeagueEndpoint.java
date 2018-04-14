@@ -35,7 +35,7 @@ public class LeagueEndpoint {
     }
 
     @PostMapping("/search")
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public List<LeagueDTO> searchResultsOfLeague(@RequestBody LeagueSearchDTO leagueSearchDTO){
         return leagueFacade.searchLeague(leagueSearchDTO);
     }

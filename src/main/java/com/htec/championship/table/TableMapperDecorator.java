@@ -62,31 +62,4 @@ public abstract class TableMapperDecorator implements TableMapper{
         return tableGroupRecords;
     }
 
-//    @Override
-//    public List<TableGroupRecord> mapToTableGroupOnlyRecord(List<TableEntity> tableEntityList, Long selectedGroupId) {
-//
-//        List<TableGroupRecord> tableGroupRecords = new ArrayList<>();
-//        Map<Long, List<TableEntity>> tableGroupRecordsGrouped =
-//                tableEntityList.stream().collect(Collectors.groupingBy(w -> w.getTablePK().getGroupId()));
-//        tableGroupRecordsGrouped.forEach((groupId, tableList)->{
-//            if(selectedGroupId.equals(groupId)) {
-//                TableGroupRecord tableGroupRecord = new TableGroupRecord();
-//                tableGroupRecord.setGroupName(groupService.findGroupById(groupId).get().getGroupName());
-//
-//                Comparator<TableDTO> comparator = Comparator.comparing(tableDTO -> tableDTO.getPoints());
-//                comparator = comparator.thenComparing(Comparator.comparing(tableDTO -> tableDTO.getGoals())).thenComparing(Comparator.comparing(tableDTO -> tableDTO.getGoalDifference()))
-//                                       .reversed();
-//                List<TableDTO> records = mapToTableDTOList(tableList).stream().sorted(comparator).collect(Collectors.toList());
-//                for (int i = 0; i < records.size(); i++) {
-//                    records.get(i).setRank(i + 1);
-//                }
-//                tableGroupRecord.setStanding(records);
-//                TableEntity maxTable = Collections.max(tableList, Comparator.comparing(TableEntity::getPlayedGames));
-//                tableGroupRecord.setMatchday(maxTable.getPlayedGames());
-//                tableGroupRecords.add(tableGroupRecord);
-//            }
-//        });
-//
-//        return tableGroupRecords;
-//    }
 }

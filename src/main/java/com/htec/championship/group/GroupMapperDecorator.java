@@ -45,25 +45,23 @@ public abstract class GroupMapperDecorator implements GroupMapper{
             groupEntity = groupService.saveGroup(delegate.mapToGroupEntity(leagueDTO));
         }
 
-
         MatchDTO matchDTO = mapGroupDTOToMatchDTO(groupDTO);
         MatchEntity matchEntity = matchMapper.mapToMatchEntity(matchDTO);
         final boolean[] updated = { false };
-        //Optional<MatchEntity> oldMatchEntityOptional = matchService.findByAwayTeamTeamNameAndHomeTeamTeamNameAndGroupEntityGroupName(groupDTO.getAwayTeam(), groupDTO.getHomeTeam(), groupDTO.getGroupName());
+
         groupEntity.getMatchEntitySet().forEach(matchEntity1 -> {
             if(matchEntity1.getHomeTeam().equals(matchEntity.getHomeTeam()) && matchEntity1.getAwayTeam().equals(matchEntity.getAwayTeam())){
                 tableService.syncTable(leagueDTO);
                 matchService.updateMatch(matchEntity, matchEntity1);
-
                 updated[0] =true;
-                //tableService.inputToTable(leagueDTO);
             }
         });
+
         if(!updated[0]){
+            matchEntity.setGroupEntity(groupEntity);
             matchService.saveMatch(matchEntity);
             groupEntity.getMatchEntitySet().add(matchEntity);
             groupService.saveGroup(groupEntity);
-
         }
         tableService.inputToTable(leagueDTO);
         return groupEntity;

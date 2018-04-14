@@ -26,14 +26,6 @@ public class TableEntity {
    @EmbeddedId
    private TablePK tablePK;
 
-    @ManyToOne
-    @JoinColumn(name = "team_id", referencedColumnName = "team_id", nullable = false, insertable = false, updatable = false)
-    private TeamEntity teamEntity;
-
-    @ManyToOne
-    @JoinColumn(name = "group_id", referencedColumnName = "group_id", nullable = false, insertable = false, updatable = false)
-    private GroupEntity groupEntity;
-
    @Column
    private Integer rank;
 
@@ -175,28 +167,13 @@ public class TableEntity {
        this.win++;
     }
 
-    public TeamEntity getTeamEntity() {
-        return teamEntity;
-    }
-
-    public void setTeamEntity(TeamEntity teamEntity) {
-        this.teamEntity = teamEntity;
-    }
-
-    public GroupEntity getGroupEntity() {
-        return groupEntity;
-    }
-
-    public void setGroupEntity(GroupEntity groupEntity) {
-        this.groupEntity = groupEntity;
-    }
 
     public void decreaseWin(){
         this.win--;
     }
 
     public void removePoints(int i) {
-        this.points -= i;
+        this.points = this.points-i;
     }
 
     public void decreaseLose() {
@@ -212,15 +189,15 @@ public class TableEntity {
     }
 
     public void removeGoals(Integer goals) {
-        this.goals-=goals;
+        this.goals = this.goals - goals;
     }
 
     public void removeGoalsAgainst(Integer goals) {
-        this.goalsAgainst-=goals;
+        this.goalsAgainst= this.goalsAgainst - goals;
     }
 
     public void removeGoalDifference(int i) {
-        this.goalDifference-=i;
+        this.goalDifference= this.goalDifference-i;
     }
 
     public void increaseWin() {
@@ -228,7 +205,7 @@ public class TableEntity {
     }
 
     public void addPoints(int i) {
-        this.points+=i;
+        this.points= this.points + i;
     }
 
     public void increaseLose() {
@@ -244,14 +221,14 @@ public class TableEntity {
     }
 
     public void addGoals(Integer goals) {
-        this.goals+=goals;
+        this.goals= this.goals + goals;
     }
 
     public void addGoalsAgainst(Integer goals) {
-        this.goalsAgainst+=goals;
+        this.goalsAgainst=this.goalsAgainst + goals;
     }
 
     public void addGoalDifference(int i) {
-        this.goalDifference+=i;
+        this.goalDifference= this.goalDifference + i;
     }
 }

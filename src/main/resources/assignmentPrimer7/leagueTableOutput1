@@ -1,0 +1,113 @@
+{
+  "leagueName": "2017–18 UEFA Champions League",
+  "tableGroupRecords": [
+    {
+      "matchday": 6,
+      "standing": [
+        {
+          "rank": 1,
+          "playedGames": 6,
+          "points": 10,
+          "goals": 14,
+          "goalsAgainst": 13,
+          "goalDifference": 1,
+          "win": 3,
+          "lose": 2,
+          "draw": 1,
+          "team": "Benfica"
+        },
+        {
+          "rank": 2,
+          "playedGames": 6,
+          "points": 10,
+          "goals": 11,
+          "goalsAgainst": 6,
+          "goalDifference": 5,
+          "win": 3,
+          "lose": 2,
+          "draw": 1,
+          "team": "CSKA Moscow"
+        },
+        {
+          "rank": 3,
+          "playedGames": 6,
+          "points": 8,
+          "goals": 13,
+          "goalsAgainst": 11,
+          "goalDifference": 2,
+          "win": 2,
+          "lose": 2,
+          "draw": 2,
+          "team": "Basel"
+        },
+        {
+          "rank": 4,
+          "playedGames": 6,
+          "points": 6,
+          "goals": 8,
+          "goalsAgainst": 16,
+          "goalDifference": -8,
+          "win": 2,
+          "lose": 4,
+          "draw": 0,
+          "team": "Manchester United"
+        }
+      ],
+      "group": "A"
+    },
+    {
+      "matchday": 6,
+      "standing": [
+        {
+          "rank": 1,
+          "playedGames": 6,
+          "points": 8,
+          "goals": 13,
+          "goalsAgainst": 9,
+          "goalDifference": 4,
+          "win": 2,
+          "lose": 2,
+          "draw": 2,
+          "team": "Bayern Munich"
+        },
+        {
+          "rank": 2,
+          "playedGames": 6,
+          "points": 8,
+          "goals": 12,
+          "goalsAgainst": 12,
+          "goalDifference": 0,
+          "win": 2,
+          "lose": 2,
+          "draw": 2,
+          "team": "Celtic"
+        },
+        {
+          "rank": 3,
+          "playedGames": 6,
+          "points": 8,
+          "goals": 10,
+          "goalsAgainst": 11,
+          "goalDifference": -1,
+          "win": 2,
+          "lose": 2,
+          "draw": 2,
+          "team": "Anderlecht"
+        },
+        {
+          "rank": 4,
+          "playedGames": 6,
+          "points": 8,
+          "goals": 9,
+          "goalsAgainst": 12,
+          "goalDifference": -3,
+          "win": 2,
+          "lose": 2,
+          "draw": 2,
+          "team": "Paris Saint-Germain"
+        }
+      ],
+      "group": "B"
+    }
+  ]
+}

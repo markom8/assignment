@@ -5,6 +5,7 @@ import com.htec.championship.league.LeagueRecord;
 import com.htec.championship.table.TableEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -44,6 +45,16 @@ public class ResultsEndpoint {
     @ResponseStatus(HttpStatus.CREATED)
     public ResultRecord createResultReturnGroupedTable(@Valid @RequestBody List<LeagueDTO> leagueDTOS) throws ConstraintViolationException{
         return resultsFacade.saveResultReturnGroupedTable(leagueDTOS);
+    }
+
+    @GetMapping
+    public ResultRecord returnGroupedTable(){
+        return resultsFacade.returnGroupedTable();
+    }
+
+    @GetMapping("/group/{groupName}")
+    public ResultRecord returnGroupedTable(@PathVariable("groupName") String groupName){
+        return resultsFacade.returnGroupedTableSelectedGroup(groupName);
     }
 
     @PostMapping("/grouped-table/group/{groupId}")

@@ -49,12 +49,12 @@ public class TableServiceImpl implements TableService {
     public void syncTable(LeagueDTO leagueDTO) {
                 matchRepository.findByAwayTeamTeamNameAndHomeTeamTeamNameAndGroupEntityGroupName(leagueDTO.getAwayTeam(),leagueDTO.getHomeTeam(),leagueDTO.getGroupName()).ifPresent(matchEntity -> {
                     TablePK teamAwayTablePK = new TablePK(leagueRepository.findLeagueIdByLeagueName(leagueDTO.getLeagueName()), groupRepository.findGroupIdByGroupName(leagueDTO.getGroupName()), teamRepository.findTeamIdByTeamName(leagueDTO.getAwayTeam()));
-                    TablePK teamHomeTablePK = new TablePK(leagueRepository.findLeagueIdByLeagueName(leagueDTO.getLeagueName()), groupRepository.findGroupIdByGroupName(leagueDTO.getGroupName()), teamRepository.findTeamIdByTeamName(leagueDTO.getAwayTeam()));
+                    TablePK teamHomeTablePK = new TablePK(leagueRepository.findLeagueIdByLeagueName(leagueDTO.getLeagueName()), groupRepository.findGroupIdByGroupName(leagueDTO.getGroupName()), teamRepository.findTeamIdByTeamName(leagueDTO.getHomeTeam()));
 
                     TableEntity awayTableEntity = findTableById(teamAwayTablePK).get();
                     TableEntity homeTableEntity = findTableById(teamHomeTablePK).get();
 
-                    String[] goals = leagueDTO.getScore().split(":");
+                    String[] goals = matchEntity.getScore().split(":");
                     Integer homeGoals = Integer.valueOf(goals[0]);
                     Integer awayGoals = Integer.valueOf(goals[1]);
 
@@ -95,8 +95,7 @@ public class TableServiceImpl implements TableService {
 
     @Override
     public void inputToTable(LeagueDTO leagueDTO) {
-//        Optional<MatchEntity> matchEntity = matchRepository.findByAwayTeamTeamNameAndHomeTeamTeamNameAndGroupEntityGroupName(leagueDTO.getAwayTeam(),leagueDTO.getHomeTeam(),leagueDTO.getGroupName());
-//        if() {
+
             TablePK teamAwayTablePK = new TablePK(leagueRepository.findLeagueIdByLeagueName(leagueDTO.getLeagueName()),
                                                   groupRepository.findGroupIdByGroupName(leagueDTO.getGroupName()),
                                                   teamRepository.findTeamIdByTeamName(leagueDTO.getAwayTeam()));
@@ -143,7 +142,6 @@ public class TableServiceImpl implements TableService {
 
             saveTable(homeTableEntity);
             saveTable(awayTableEntity);
-//        }
     }
 
     @Override
@@ -165,5 +163,10 @@ public class TableServiceImpl implements TableService {
     @Override
     public List<TableEntity> getAllForGroup(Long groupId) {
         return tableRepository.findAllByTablePKGroupId(groupId);
+    }
+
+    @Override
+    public List<TableEntity> getAllForGroupName(String groupName) {
+        return tableRepository.findAllByTablePKGroupId(groupRepository.findGroupIdByGroupName(groupName));
     }
 }

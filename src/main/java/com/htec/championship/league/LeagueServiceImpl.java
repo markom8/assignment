@@ -27,6 +27,11 @@ public class LeagueServiceImpl implements LeagueService {
     }
 
     @Override
+    public Optional<String> findLeagueNameByLeagueid(Long leagueId) {
+        return leagueRepository.findLeagueNameByLeagueid(leagueId);
+    }
+
+    @Override
     public Optional<LeagueEntity> findLeagueByLeagueName(String leagueName) {
         return leagueRepository.findByLeagueName(leagueName);
     }
