@@ -25,6 +25,8 @@
         <java.version>1.8</java.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
         <querydsl-jpa.version>4.2.1</querydsl-jpa.version>
+        <io.springfox.springfox-swagger2>2.3.1</io.springfox.springfox-swagger2>
+        <io.springfox.springfox-swagger-ui>2.3.1</io.springfox.springfox-swagger-ui>
     </properties>
 
 
@@ -96,17 +98,21 @@
             <optional>true</optional>
         </dependency>
 
+        <!-- Include swagger for API description -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${io.springfox.springfox-swagger2}</version>
+        </dependency>
+
+        <!-- Include swagger for API description UI -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${io.springfox.springfox-swagger-ui}</version>
+        </dependency>
 
     </dependencies>
-
-    <!--<build>-->
-        <!--<plugins>-->
-            <!--<plugin>-->
-                <!--<groupId>org.springframework.boot</groupId>-->
-                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
-            <!--</plugin>-->
-        <!--</plugins>-->
-    <!--</build>-->
 
     <build>
         <plugins>
@@ -115,11 +121,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
                     <annotationProcessorPaths>
-                <!--        <path>
-                            <groupId>org.hibernate</groupId>
-                            <artifactId>hibernate-jpamodelgen</artifactId>
-                            <version>${hibernate-jpamodelgen.version}</version>
-                        </path>-->
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>

@@ -1,9 +1,7 @@
 package com.htec.championship.group;
 
-import com.htec.championship.match.MatchEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
@@ -13,7 +11,7 @@ import java.util.Optional;
 
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-public interface GroupRepository extends JpaRepository<GroupEntity, Long>, QuerydslPredicateExecutor<GroupEntity> {
+public interface GroupRepository extends JpaRepository<GroupEntity, Long>{
 
     Optional<GroupEntity> findByGroupName(String groupName);
 
